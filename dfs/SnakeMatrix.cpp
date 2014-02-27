@@ -47,6 +47,7 @@ int main()
 			//转方向
 			d = (d + 1) %4;
 		}
+		//准备下一步
 		i = i + direction[d][0];
 		j = j + direction[d][1];
 		num++;
