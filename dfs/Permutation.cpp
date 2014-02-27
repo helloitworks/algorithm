@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 /*
 输出全排列
@@ -21,9 +22,10 @@ void swap(char &a, char &b)
 	b = temp;
 }
 
+//k表示当前选取到第几个数,m表示共有多少数.  
 void Permutation(char* a,int k,int m)
 {
-	int i,j;
+	int i;
 	if(k == m)
 	{
 		for(i=0;i<=m;i++)
@@ -34,11 +36,11 @@ void Permutation(char* a,int k,int m)
 	}
 	else
 	{
-		for(j=k;j<=m;j++)
+		for(i = k; i <= m; i++)
 		{
-			swap(a[j],a[k]);
-			Permutation(a,k+1,m);
-			swap(a[j],a[k]);
+			swap(a[i], a[k]);
+			Permutation(a, k+1, m);
+			swap(a[i], a[k]);
 		}
 	}
 }
@@ -46,7 +48,9 @@ int main(void)
 {
 	char a[] = "abc";
 	printf("全排列结果为：\n");
-	Permutation(a,0,2);
+	Permutation(a, 0, strlen(a) - 1);
 	system("pause");
 	return 0;
 }
+
+//http://blog.csdn.net/morewindows/article/details/7370155
