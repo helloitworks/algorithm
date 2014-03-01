@@ -89,6 +89,7 @@ void DSF()
 				a[node.row] = node.col;
 				Print();
 				
+				//进入当前层的下一个结点
 				//node = stack.top();
 				node.col++;
 				stack.pop();
