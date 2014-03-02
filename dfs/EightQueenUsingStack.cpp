@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stack>
 using namespace std;
+
 /*八皇后问题是在8*8的棋盘上放置8枚皇后，使得棋盘中每个横向、纵向、左上至右下斜向、右上至左下斜向均只有一枚皇后*/
 
 const int N = 8; //棋盘行数
